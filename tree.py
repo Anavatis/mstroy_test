@@ -11,19 +11,19 @@ class TreeStore:
         self._nodes_dict = generator.nodes_dict
         self._parents_dict = generator.parents_dict
 
-    def getAll(self) -> List[dict]:
+    def get_all(self) -> List[dict]:
         return self._get_tree_list(self._tree)
 
-    def getItem(self, node_id: int) -> dict:
+    def get_item(self, node_id: int) -> dict:
         node = self._get_node(node_id)
         return node.to_dict()
 
-    def getChildren(self, node_id: int) -> List[dict]:
+    def get_children(self, node_id: int) -> List[dict]:
         node = self._get_node(node_id)
         children = node.children
         return [child.to_dict() for child in children]
 
-    def getAllParents(self, node_id: int) -> List[dict]:
+    def get_all_parents(self, node_id: int) -> List[dict]:
         node = self._get_node(node_id)
         parent = node.parent
         parents_list = []
